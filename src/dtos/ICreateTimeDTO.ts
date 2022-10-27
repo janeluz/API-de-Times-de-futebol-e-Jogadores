@@ -1,5 +1,5 @@
 interface ICreateTimeDTO {
-  
+
 "id": string;
 "name": string;
 "coach": string;
@@ -7,5 +7,6 @@ interface ICreateTimeDTO {
 "city": string;
 
 }
+
 
 export { ICreateTimeDTO };
