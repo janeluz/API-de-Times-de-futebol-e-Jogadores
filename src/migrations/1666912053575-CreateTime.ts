@@ -2,7 +2,7 @@ import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class CreateTime1666912053575 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    // Cria a tabela
+  
     await queryRunner.createTable(
       new Table({
         name: 'times',
@@ -34,7 +34,7 @@ export class CreateTime1666912053575 implements MigrationInterface {
     );
   }
 
-  // Se algo der errado exclui a tabela
+  
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable('times');
   }

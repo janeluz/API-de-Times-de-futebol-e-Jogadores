@@ -13,6 +13,8 @@ class ListByNameController {
     const timeName = await listByNameUseCase.execute({name: name as string});
 
     return response.json(timeName);
+  
+   
   }
 }
 

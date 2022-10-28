@@ -1,26 +1,37 @@
-// import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
-// import { v4 as uuidv4} from "uuid";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { v4 as uuidv4} from "uuid";
+import { Time } from "./time";
+@Entity('jogadores')
+class Jogador {
 
-// class Jogador {
+  @PrimaryGeneratedColumn('uuid')
+  "id":string;
 
-//   "id":string;
- 
-//   "team_id": string;
+  @ManyToOne(() => Time)
+  @JoinColumn({ name: "team_id" })
+  time: Time;
 
-//   "name": string;
+  @Column()
+  "team_id": string;
 
-//   "age":number;
+  @Column()
+  "name": string;
 
-//   "position": string;
+  @Column()
+  "age":number;
 
-//   "goals": number;
+  @Column()
+  "position": string;
+  
+  @Column()
+  "goals": number;
 
-// constructor() {
-//   if (!this.id) {
-//     this.id = uuidv4();
-//   }
-//   }
-// }
+constructor() {
+  if (!this.id) {
+    this.id = uuidv4();
+  }
+  }
+}
 
-// export { Jogador };
+export { Jogador };
  

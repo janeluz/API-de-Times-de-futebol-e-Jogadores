@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 import { openDb } from './configDB';
 import { CreateTime1666912053575 } from './migrations/1666912053575-CreateTime';
+import { CreateJogador1666964806802 } from './migrations/1666964806802-CreateJogador';
 import { Time } from './modules/entities/time';
 
 export const AppDataSource = new DataSource({
@@ -10,7 +11,7 @@ export const AppDataSource = new DataSource({
   synchronize: true,
   logging: false,
   entities: [Time],
-  migrations: [CreateTime1666912053575],
+  migrations: [CreateTime1666912053575,CreateJogador1666964806802],
   subscribers: [],
 });
 
