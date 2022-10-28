@@ -2,7 +2,7 @@ import { Repository } from 'typeorm';
 import { AppDataSource } from '../../../data-source';
 import { ICreateJogadorDTO } from '../../../dtos/ICreateJogadorDTO';
 import { Jogador } from '../entities/jogador';
-import { IJogadorRepository } from './implementations/IJogadorrepository';
+import { IJogadorRepository } from './implementations/IJogadorRepository';
 
 class JogadorRepository implements IJogadorRepository {
   private repository: Repository<Jogador>;
