@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { CreateTimeController } from '../useCases/CreateTime/CreateTimeUseCase';
-import { ListAllController } from '../useCases/ListAll/ListAllController';
+import { ListAllController } from '../useCases/ListAll/listAllController';
 
 const timesRoutes = Router();
 

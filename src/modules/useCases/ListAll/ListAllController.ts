@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
-import { ListAllUseCase } from "./ListAllUseCase";
+import { ListAllUseCase } from "./listAllUseCase";
 
 
 
