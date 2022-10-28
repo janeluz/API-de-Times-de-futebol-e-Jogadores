@@ -20,7 +20,10 @@ class TimeRepository implements ITimeRepository {
     });
     await this.repository.save(time);
   }
-
+  async findByName(name: string): Promise<Time> {
+    const time = await this.repository.findOneBy({ name });
+    return time;
+  }
  
   }
 

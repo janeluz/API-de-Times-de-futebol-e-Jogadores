@@ -5,7 +5,7 @@ import { v4 as uuidv4} from "uuid";
 class Time {
 
 @PrimaryGeneratedColumn('uuid')
-"id": string;
+"id"?: string;
 
 @Column()
 "name": string;

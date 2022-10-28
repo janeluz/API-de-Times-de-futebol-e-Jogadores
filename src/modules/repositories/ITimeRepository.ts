@@ -1,10 +1,11 @@
 import { ICreateTimeDTO } from "../../dtos/ICreateTimeDTO";
+import { Time } from "../entities/time";
 
 
 
 interface ITimeRepository {
-  create({name,coach,stadium,city}: ICreateTimeDTO): void;
- 
+  create(data: ICreateTimeDTO): void;
+  findByName(name: string): Promise<Time>;
 
 }
 
