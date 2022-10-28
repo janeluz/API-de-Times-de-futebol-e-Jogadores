@@ -4,6 +4,6 @@ import { ITimeRepository } from "../../modules/repositories/ITimeRepository";
 
 
 container.registerSingleton<ITimeRepository>(
-  ' TimeRepository ',
+  'TimeRepository',
   TimeRepository,
 );

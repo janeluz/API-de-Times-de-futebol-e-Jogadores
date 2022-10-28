@@ -1,21 +1,15 @@
-import { inject, injectable } from "tsyringe";
-import { ICreateTimeDTO } from "../../dtos/ICreateTimeDTO";
-import { ITimeRepository } from "../repositories/ITimeRepository";
-
+import { inject, injectable } from 'tsyringe';
+import { ICreateTimeDTO } from '../../../dtos/ICreateTimeDTO';
+import { ITimeRepository } from '../../repositories/ITimeRepository';
 
 @injectable()
 class CreateTimeUseCase {
   constructor(
-    @inject('TimesRepository')
+    @inject('TimeRepository')
     private timesRepository: ITimeRepository,
   ) {}
 
-  async excute({
-    name,
-    coach,
-    stadium,
-    city
-  }: ICreateTimeDTO): Promise<void> {
+  async excute({ name, coach, stadium, city }: ICreateTimeDTO): Promise<void> {
     const timeAlreadyExists = await this.timesRepository.findByName(name);
 
     if (timeAlreadyExists) {
@@ -26,7 +20,7 @@ class CreateTimeUseCase {
       name,
       coach,
       stadium,
-      city
+      city,
     });
   }
 }

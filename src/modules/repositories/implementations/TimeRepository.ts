@@ -24,6 +24,10 @@ class TimeRepository implements ITimeRepository {
     const time = await this.repository.findOneBy({ name });
     return time;
   }
+  async listAll(): Promise<Time[]> {
+    const times = await this.repository.find();
+    return times;
+  }
  
   }
 
