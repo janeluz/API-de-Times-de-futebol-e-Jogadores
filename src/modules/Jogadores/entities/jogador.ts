@@ -1,6 +1,6 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { v4 as uuidv4} from "uuid";
-import { Time } from "./time";
+import { Time } from "../../entities/time";
 @Entity('jogadores')
 class Jogador {
 
