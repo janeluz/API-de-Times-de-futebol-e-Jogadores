@@ -11,8 +11,8 @@ export const AppDataSource = new DataSource({
   database: './server.sqlite',
   synchronize: true,
   logging: false,
-  entities: [Time,Jogador],
-  migrations: [CreateTime1666912053575,CreateJogador1666964806802],
+  entities: [Time, Jogador],
+  migrations: [CreateTime1666912053575, CreateJogador1666964806802],
   subscribers: [],
 });
 
@@ -21,6 +21,3 @@ AppDataSource.initialize()
     openDb();
   })
   .catch(error => console.log(error));
- 
-  
-  

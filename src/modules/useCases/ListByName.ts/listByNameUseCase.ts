@@ -1,8 +1,8 @@
-import { inject, injectable } from "tsyringe";
-import { ICreateTimeDTO } from "../../../dtos/ICreateTimeDTO";
-import { Time } from "../../entities/time";
-import { ITimeRepository } from "../../repositories/ITimeRepository";
-
+import { inject, injectable } from 'tsyringe';
+import { ICreateTimeDTO } from '../../../dtos/ICreateTimeDTO';
+import { AppError } from '../../../errors/AppError';
+import { Time } from '../../entities/time';
+import { ITimeRepository } from '../../repositories/ITimeRepository';
 
 interface IRequest {
   name: string;
@@ -12,12 +12,13 @@ interface IRequest {
 class ListByNameUseCase {
   constructor(
     @inject('TimeRepository')
-    private timeRepository: ITimeRepository){}
-      async execute({name} : IRequest) : Promise<Time> {
-    const time = await this.timeRepository.findByName(name)
+    private timeRepository: ITimeRepository,
+  ) {}
+  async execute({ name }: IRequest): Promise<Time> {
+
+    const time = await this.timeRepository.findByName(name);
+    
     return time;
-
-    }
   }
-  export { ListByNameUseCase};
-
+}
+export { ListByNameUseCase };
