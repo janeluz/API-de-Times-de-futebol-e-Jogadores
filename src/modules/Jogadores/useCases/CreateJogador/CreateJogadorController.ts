@@ -3,7 +3,9 @@ import { container } from 'tsyringe';
 import { CreateJogadorUseCase } from './CreateJojadorUsecase';
 
 class CreateJogadorController {
+
   async handle(request: Request, response: Response): Promise<Response> {
+  
     const { name, team_id, age, position, goals } = request.body;
 
     const createJogadorUseCase = container.resolve(CreateJogadorUseCase);
@@ -16,6 +18,7 @@ class CreateJogadorController {
       goals,
     });
 
+    console.log(jogador,"testeee3");
     return response.status(201).json(jogador);
   }
 }

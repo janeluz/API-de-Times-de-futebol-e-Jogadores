@@ -22,7 +22,7 @@ class JogadorRepository implements IJogadorRepository {
     position,
     goals,
     
-  }: ICreateJogadorDTO): Promise<void> {
+  }: ICreateJogadorDTO): Promise<Jogador> {
     const jogador = this.repository.create({
       name,
       team_id,
@@ -31,20 +31,25 @@ class JogadorRepository implements IJogadorRepository {
       goals,
     
     });
-    await this.repository.save(jogador);
+    
+     await this.repository.save(jogador);
+    return  jogador;
   }
   async findById(id: string): Promise<Jogador> {
+    
     const jogador = await this.repository.findOneBy({id});
+    
     return jogador;
   }
-async findByPosition(position:string): Promise<Jogador[]>{
-const playsQuery = this.repository.createQueryBuilder('jogador').groupBy('jogador.position');
+async findByPosition(position: string): Promise<Jogador[]>{
 
-const query = await playsQuery.getMany();
+const playsQuery = this.repository.createQueryBuilder('jogadores').groupBy('jogadores.position').getMany();
 
-return query;
-
+return playsQuery;
+ 
 }
+
+
 }
 
 export { JogadorRepository };

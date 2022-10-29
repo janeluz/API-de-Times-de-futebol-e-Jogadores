@@ -1,10 +1,11 @@
-import { openDb } from "./configDB";
-import express, { NextFunction, Request, Response }  from "express"
+import express, { NextFunction, Request, Response }  from "express";
+import 'express-async-errors';
 import 'reflect-metadata';
 import { timesRoutes } from "./modules/routes/times.routes";
 import './shared/container';
 import { jogadoresRoutes } from "./modules/routes/jogadores.routes";
 import { AppError } from "./errors/AppError";
+
 
 const app = express();
 

@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 import { openDb } from './configDB';
-import { CreateTime1666912053575 } from './migrations/1666912053575-CreateTime';
-import { CreateJogador1666964806802 } from './migrations/1666964806802-CreateJogador';
-import { Time } from './modules/entities/time';
+import { CreateTeam1667078172975 } from './migrations/1667078172975-CreateTeam';
+import { CreateJogador1667080250237 } from './migrations/1667080250237-CreateJogador';
+import { Team } from './modules/entities/time';
 import { Jogador } from './modules/Jogadores/entities/jogador';
 
 export const AppDataSource = new DataSource({
@@ -11,8 +11,8 @@ export const AppDataSource = new DataSource({
   database: './server.sqlite',
   synchronize: true,
   logging: false,
-  entities: [Time, Jogador],
-  migrations: [CreateTime1666912053575, CreateJogador1666964806802],
+  entities: [Team, Jogador],
+  migrations: [CreateTeam1667078172975,CreateJogador1667080250237 ],
   subscribers: [],
 });
 

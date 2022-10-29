@@ -1,21 +1,19 @@
-import { Request, Response } from "express";
-import { container, inject, injectable } from "tsyringe";
+import { inject, injectable } from "tsyringe";
 import { Jogador } from "../../entities/jogador";
 import { IJogadorRepository } from "../../repositories/implementations/IJogadorRepository";
 
 @injectable()
-class ListByIdUseCase {
+class ListByPositionUseCase {
   constructor(
     @inject('JogadorRepository')
     private jogadorRepository : IJogadorRepository
   ){}
-   async execute(id:string):Promise<Jogador>{
-        
-    const jogador = await this.jogadorRepository.findById(id);
-   
+   async execute(position: string):Promise<Jogador[]>{
+    
+    const jogador = await this.jogadorRepository.findByPosition(position);
     return jogador;
    }
     
   }
 
-export { ListByIdUseCase };
+export { ListByPositionUseCase };

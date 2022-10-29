@@ -1,8 +1,6 @@
 import { inject, injectable } from 'tsyringe';
-import { ICreateTimeDTO } from '../../../dtos/ICreateTimeDTO';
-import { AppError } from '../../../errors/AppError';
-import { Time } from '../../entities/time';
-import { ITimeRepository } from '../../repositories/ITimeRepository';
+import { Team } from '../../entities/time';
+import { ITeamRepository } from '../../repositories/ITimeRepository';
 
 interface IRequest {
   name: string;
@@ -11,12 +9,12 @@ interface IRequest {
 @injectable()
 class ListByNameUseCase {
   constructor(
-    @inject('TimeRepository')
-    private timeRepository: ITimeRepository,
+    @inject('TeamRepository')
+    private teamRepository: ITeamRepository,
   ) {}
-  async execute({ name }: IRequest): Promise<Time> {
+  async execute({ name }: IRequest): Promise<Team> {
 
-    const time = await this.timeRepository.findByName(name);
+    const time = await this.teamRepository.findByName(name);
     
     return time;
   }

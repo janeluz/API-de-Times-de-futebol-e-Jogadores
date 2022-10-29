@@ -1,16 +1,17 @@
 import { inject, injectable } from 'tsyringe';
-import { Time } from '../../entities/time';
-import { ITimeRepository } from '../../repositories/ITimeRepository';
+import { Team } from '../../entities/time';
+import { ITeamRepository } from '../../repositories/ITimeRepository';
+
 
 @injectable()
 class ListAllUseCase {
   constructor(
-    @inject('TimeRepository')
-    private timeRepository: ITimeRepository,
+    @inject('TeamRepository')
+    private teamRepository: ITeamRepository,
   ) {}
-  async execute(): Promise<Time[]> {
-    const times = await this.timeRepository.listAll();
-    return times;
+  async execute(): Promise<Team[]> {
+    const teams = await this.teamRepository.listAll();
+    return teams;
   }
 }
 

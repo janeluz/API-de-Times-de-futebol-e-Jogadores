@@ -1,10 +1,12 @@
 import { ICreateTimeDTO } from '../../dtos/ICreateTimeDTO';
-import { Time } from '../entities/time';
+import { Team } from '../entities/time';
 
-interface ITimeRepository {
+
+interface ITeamRepository {
   create(data: ICreateTimeDTO): void;
-  findByName(name: string): Promise<Time>;
-  listAll(): Promise<Time[]>;
+  findByName(name: string): Promise<Team>;
+  listAll(): Promise<Team[]>;
+  
 }
 
-export { ITimeRepository };
+export { ITeamRepository };

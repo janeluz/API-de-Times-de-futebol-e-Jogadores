@@ -2,8 +2,8 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { v4 as uuidv4} from "uuid";
 import { Jogador } from "../Jogadores/entities/jogador";
 
-@Entity('times')
-class Time {
+@Entity('teams')
+class Team {
 
 @PrimaryGeneratedColumn('uuid')
 id: string;
@@ -20,7 +20,7 @@ stadium:string;
 @Column()
 city: string;
 
-@OneToMany(()=> Jogador, jogador => jogador.time)
+@OneToMany(()=> Jogador, jogador => jogador.team)
 jogadores: Jogador[];
 
 
@@ -33,5 +33,5 @@ constructor() {
 }
 
 
-export { Time };
+export { Team };
 

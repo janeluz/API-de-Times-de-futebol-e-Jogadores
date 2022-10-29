@@ -7,15 +7,15 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
-import { Time } from '../../entities/time';
+import { Team, } from '../../entities/time';
 @Entity('jogadores')
 class Jogador {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @ManyToOne(() => Time, time => time.jogadores)
+  @ManyToOne(() => Team, team => team.jogadores)
   @JoinColumn({ name: 'team_id' })
-  time: Time;
+  team: Team;
 
   @Column()
   team_id: string;

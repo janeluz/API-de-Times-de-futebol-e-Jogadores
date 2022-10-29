@@ -9,9 +9,9 @@ class ListByNameController {
   
     const listByNameUseCase = container.resolve(ListByNameUseCase);
 
-    const timeName = await listByNameUseCase.execute({name: name as string});
+    const teamName = await listByNameUseCase.execute({name: name as string});
 
-    return response.json(timeName);
+    return response.json(teamName);
   
   }
 }

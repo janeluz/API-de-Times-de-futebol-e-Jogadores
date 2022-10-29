@@ -6,14 +6,15 @@ import { ListByIdUseCase } from "./ListByIdUseCase";
 
 
 class ListByIdController {
-  async handle(request: Request, response: Response): Promise<Jogador> {
+  async handle(request: Request, response: Response): Promise<Response> {
+    
     const {id} = request.params;
 
     const listByIdUseCase = container.resolve(ListByIdUseCase);
 
-     const jogador = await listByIdUseCase.execute(id);
+    const jogador = await listByIdUseCase.execute(id);
 
-    return jogador;
+    return response.json(jogador);
   }
 }
 

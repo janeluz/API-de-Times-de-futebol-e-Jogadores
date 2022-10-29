@@ -1,6 +1,7 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm"
 
-export class CreateJogador1666964806802 implements MigrationInterface {
+export class CreateJogador1667080250237 implements MigrationInterface {
+
     public async up(queryRunner: QueryRunner):Promise<void> {
         await queryRunner.createTable(
             new Table({
@@ -36,7 +37,7 @@ export class CreateJogador1666964806802 implements MigrationInterface {
                 foreignKeys: [
                     {
                     name: 'FKJogador',
-                    referencedTableName: 'times',
+                    referencedTableName: 'teams',
                     referencedColumnNames: ['id'],
                     columnNames: ['team_id'],
                     onDelete: 'SET NULL',
