@@ -1,9 +1,7 @@
 # API-de-Times-de-futebol-e-Jogadores
 Desafio Acelera Jovem Back End 2º Trimestre
 
-#Requisitos
-
-
+## Requisitos
 - Você deverá criar um projeto de API utilizando Node.JS + Express + Typescript.
 - O projeto se trata de uma API que faz o gerenciamento de times de futebol e seus jogadores.
     - Campos da entidade jogador
@@ -55,3 +53,37 @@ Desafio Acelera Jovem Back End 2º Trimestre
 
 - Fazer uso do banco de dados SQLite para salvar as informações
 - Utilize a programação orientada a objetos para separar as responsabilidades da sua API
+
+## Tecnologias utilizadas
+
+
+- Node.Js 
+- Typescript
+-Typeorm
+-Sqlite3
+
+# Como executar o projeto
+
+```bash
+# clonar repositório
+git clone https://github.com/janeluz/API-de-Times-de-Futebol-e-Jogadores
+
+# entrar na pasta do projeto
+cd API-de-Times-de-Futebol-e-Jogadores
+
+# Instalar dependencias
+yarn install
+
+# executar o projeto
+yarn dev
+```
+
+
+## Desenvolvido por :
+Jane Rodrigues <br>
+https://www.linkedin.com/in/janerodriguesluz
+
+
+
+
+
