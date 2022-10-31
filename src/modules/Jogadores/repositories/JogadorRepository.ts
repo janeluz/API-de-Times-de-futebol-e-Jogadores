@@ -41,14 +41,6 @@ class JogadorRepository implements IJogadorRepository {
     
     return jogador;
   }
-async findByPosition(position: string): Promise<Jogador[]>{
-
-const playsQuery = this.repository.createQueryBuilder('jogadores').groupBy('jogadores.position').getMany();
-
-return playsQuery;
- 
-}
-
 
 }
 

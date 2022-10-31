@@ -22,7 +22,10 @@ class TeamRepository implements ITeamRepository {
     await this.repository.save(team);
   }
   async findByName(name: string): Promise<Team> {
-    const team = await this.repository.findOneBy({ name });
+    const team = await this.repository.findOneOrFail({ relations:['jogadores'],
+  where: {
+    name: name
+  }});
     return team;
   }
   
