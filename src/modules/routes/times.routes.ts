@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { CreateTeamController } from '../useCases/CreateTime/CreateTeamUseCase';
+import { CreateTeamController } from '../useCases/CreateTime/CreateTeamController';
 
 import { ListAllController } from '../useCases/ListAll/listAllController';
 import { ListByNameController } from '../useCases/ListByName.ts/listByNameController';

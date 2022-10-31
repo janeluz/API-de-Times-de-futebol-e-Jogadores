@@ -1,30 +1,18 @@
-import { inject, injectable } from 'tsyringe';
-import { ICreateTimeDTO } from '../../../dtos/ICreateTimeDTO';
-import { AppError } from '../../../errors/AppError';
-import { ITeamRepository } from '../../repositories/ITimeRepository';
+import { Request, Response } from 'express';
+import { container } from 'tsyringe';
+import { CreateTeamUseCase } from './CreateTeamUseCase';
 
 
-@injectable()
-class CreateTeamUseCase {
-  constructor(
-    @inject('TeamRepository')
-    private teamRepository: ITeamRepository,
-  ) {}
+class CreateTeamController {
+  async handle(request: Request, response: Response) {
+    const { name, coach, stadium, city } = request.body;
 
-  async excute({ name, coach, stadium, city }: ICreateTimeDTO): Promise<void> {
-    const timeAlreadyExists = await this.teamRepository.findByName(name);
+    const createTeamUseCase = container.resolve(CreateTeamUseCase);
 
-    if (timeAlreadyExists) {
-      throw new AppError('Team Already exists');
-    }
+    await createTeamUseCase.excute({ name, coach, stadium, city });
 
-    this.teamRepository.create({
-      name,
-      coach,
-      stadium,
-      city,
-    });
+    return response.status(201).send();
   }
 }
 
-export { CreateTeamUseCase };
+export { CreateTeamController };

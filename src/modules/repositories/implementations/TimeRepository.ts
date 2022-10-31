@@ -22,7 +22,8 @@ class TeamRepository implements ITeamRepository {
     await this.repository.save(team);
   }
   async findByName(name: string): Promise<Team> {
-    const team = await this.repository.findOneOrFail({ relations:['jogadores'],
+    const team = await this.repository.findOne({ 
+    relations:['jogadores'],
   where: {
     name: name
   }});
