@@ -56,11 +56,10 @@ Desafio Acelera Jovem Back End 2º Trimestre
 
 ## Tecnologias utilizadas
 
-
-- Node.Js 
+- Express
 - Typescript
--Typeorm
--Sqlite3
+- Typeorm
+- Sqlite3    
 
 # Como executar o projeto
 
