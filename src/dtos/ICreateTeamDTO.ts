@@ -1,4 +1,4 @@
-interface ICreateTimeDTO {
+interface ICreateTeamDTO {
 
 id?: string;
 name: string;
@@ -9,4 +9,4 @@ city: string;
 }
 
 
-export { ICreateTimeDTO };
+export { ICreateTeamDTO };

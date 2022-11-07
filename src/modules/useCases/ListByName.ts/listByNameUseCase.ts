@@ -1,5 +1,5 @@
 import { inject, injectable } from 'tsyringe';
-import { Team } from '../../entities/time';
+import { Team } from '../../entities/team';
 import { ITeamRepository } from '../../repositories/ITimeRepository';
 
 interface IRequest {
@@ -13,9 +13,8 @@ class ListByNameUseCase {
     private teamRepository: ITeamRepository,
   ) {}
   async execute({ name }: IRequest): Promise<Team> {
-
     const time = await this.teamRepository.findByName(name);
-    
+
     return time;
   }
 }

@@ -1,12 +1,11 @@
-import { Router } from "express";
-import { jogadoresRoutes } from "./jogadores.routes";
-import { timesRoutes } from "./times.routes";
+import { Router } from 'express';
+import { playersRoutes } from './players.routes';
 
+import { teamsRoutes } from './teams.routes';
 
 const router = Router();
 
-router.use('/times', timesRoutes);
-router.use('/jogadores', jogadoresRoutes);
+router.use('/teams', teamsRoutes);
+router.use('/players', playersRoutes);
 
-
-export{ router};
+export { router };

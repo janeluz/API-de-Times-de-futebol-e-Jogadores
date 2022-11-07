@@ -7,13 +7,13 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
-import { Team, } from '../../entities/time';
-@Entity('jogadores')
-class Jogador {
+import { Team } from '../../entities/team';
+@Entity('players')
+class Player {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @ManyToOne(() => Team, team => team.jogadores)
+  @ManyToOne(() => Team, team => team.players)
   @JoinColumn({ name: 'team_id' })
   team: Team;
 
@@ -39,4 +39,4 @@ class Jogador {
   }
 }
 
-export { Jogador };
+export { Player };

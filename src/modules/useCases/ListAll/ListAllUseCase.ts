@@ -1,7 +1,6 @@
 import { inject, injectable } from 'tsyringe';
-import { Team } from '../../entities/time';
+import { Team } from '../../entities/team';
 import { ITeamRepository } from '../../repositories/ITimeRepository';
-
 
 @injectable()
 class ListAllUseCase {

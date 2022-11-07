@@ -1,14 +1,11 @@
+import { Request, Response } from 'express';
+import { container } from 'tsyringe';
 
-import { Request, Response } from "express";
-import { container } from "tsyringe";
-import { Jogador } from "../../entities/jogador";
-import { ListByIdUseCase } from "./ListByIdUseCase";
-
+import { ListByIdUseCase } from './ListByIdUseCase';
 
 class ListByIdController {
   async handle(request: Request, response: Response): Promise<Response> {
-    
-    const {id} = request.params;
+    const { id } = request.params;
 
     const listByIdUseCase = container.resolve(ListByIdUseCase);
 
@@ -18,4 +15,4 @@ class ListByIdController {
   }
 }
 
-export{ ListByIdController };
+export { ListByIdController };

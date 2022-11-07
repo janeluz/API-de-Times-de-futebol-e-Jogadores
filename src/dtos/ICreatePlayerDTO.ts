@@ -1,4 +1,4 @@
-interface ICreateJogadorDTO {
+interface ICreatePlayerDTO {
 
   id?:string;
   team_id: string;
@@ -8,4 +8,4 @@ interface ICreateJogadorDTO {
   goals: number;
 }
 
-export{ ICreateJogadorDTO };
+export{ ICreatePlayerDTO };

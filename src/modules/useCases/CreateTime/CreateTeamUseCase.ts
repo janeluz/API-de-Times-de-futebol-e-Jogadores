@@ -1,8 +1,8 @@
 import { inject, injectable } from 'tsyringe';
-import { ICreateTimeDTO } from '../../../dtos/ICreateTimeDTO';
+import { ICreateTeamDTO } from '../../../dtos/ICreateTeamDTO';
+
 import { AppError } from '../../../errors/AppError';
 import { ITeamRepository } from '../../repositories/ITimeRepository';
-
 
 @injectable()
 class CreateTeamUseCase {
@@ -11,7 +11,7 @@ class CreateTeamUseCase {
     private teamRepository: ITeamRepository,
   ) {}
 
-  async excute({ name, coach, stadium, city }: ICreateTimeDTO): Promise<void> {
+  async excute({ name, coach, stadium, city }: ICreateTeamDTO): Promise<void> {
     const timeAlreadyExists = await this.teamRepository.findByName(name);
 
     if (timeAlreadyExists) {

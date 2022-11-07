@@ -4,7 +4,7 @@ import { CreateTeamController } from '../useCases/CreateTime/CreateTeamControlle
 import { ListAllController } from '../useCases/ListAll/listAllController';
 import { ListByNameController } from '../useCases/ListByName.ts/listByNameController';
 
-const timesRoutes = Router();
+const teamsRoutes = Router();
 
 const createTeamController = new CreateTeamController();
 
@@ -13,8 +13,8 @@ const listAllController = new ListAllController();
 const listByNameController = new ListByNameController();
 
 
-timesRoutes.post('/', createTeamController.handle);
-timesRoutes.get('/', listAllController.handle);
-timesRoutes.get('/name', listByNameController.handle);
+teamsRoutes.post('/', createTeamController.handle);
+teamsRoutes.get('/', listAllController.handle);
+teamsRoutes.get('/name', listByNameController.handle);
 
-export { timesRoutes };
+export { teamsRoutes };

@@ -1,9 +1,8 @@
 import { Repository } from 'typeorm';
 import { AppDataSource } from '../../../data-source';
-import { ICreateTimeDTO } from '../../../dtos/ICreateTimeDTO';
-import { Team } from '../../entities/time';
+import { ICreateTeamDTO } from '../../../dtos/ICreateTeamDTO';
+import { Team } from '../../entities/team';
 import { ITeamRepository } from '../ITimeRepository';
-
 
 class TeamRepository implements ITeamRepository {
   private repository: Repository<Team>;
@@ -12,7 +11,7 @@ class TeamRepository implements ITeamRepository {
     this.repository = AppDataSource.getRepository(Team);
   }
 
-  async create({ name, coach, stadium, city }: ICreateTimeDTO): Promise<void> {
+  async create({ name, coach, stadium, city }: ICreateTeamDTO): Promise<void> {
     const team = this.repository.create({
       name,
       coach,
@@ -22,20 +21,19 @@ class TeamRepository implements ITeamRepository {
     await this.repository.save(team);
   }
   async findByName(name: string): Promise<Team> {
-    const team = await this.repository.findOne({ 
-    relations:['jogadores'],
-  where: {
-    name: name
-  }});
+    const team = await this.repository.findOne({
+      relations: ['jogadores'],
+      where: {
+        name: name,
+      },
+    });
     return team;
   }
-  
-  
+
   async listAll(): Promise<Team[]> {
     const teams = await this.repository.find();
     return teams;
   }
- 
 }
 
 export { TeamRepository };
