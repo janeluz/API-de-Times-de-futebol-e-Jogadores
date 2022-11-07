@@ -36,7 +36,7 @@ export class CreatePlayer1667080250237 implements MigrationInterface {
                 ],
                 foreignKeys: [
                     {
-                    name: 'FKJogador',
+                    name: 'FKPlayer',
                     referencedTableName: 'teams',
                     referencedColumnNames: ['id'],
                     columnNames: ['team_id'],

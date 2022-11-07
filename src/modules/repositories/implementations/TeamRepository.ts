@@ -2,7 +2,7 @@ import { Repository } from 'typeorm';
 import { AppDataSource } from '../../../data-source';
 import { ICreateTeamDTO } from '../../../dtos/ICreateTeamDTO';
 import { Team } from '../../entities/team';
-import { ITeamRepository } from '../ITimeRepository';
+import { ITeamRepository } from '../ITeamRepository';
 
 class TeamRepository implements ITeamRepository {
   private repository: Repository<Team>;
@@ -22,7 +22,7 @@ class TeamRepository implements ITeamRepository {
   }
   async findByName(name: string): Promise<Team> {
     const team = await this.repository.findOne({
-      relations: ['jogadores'],
+      relations: ['players'],
       where: {
         name: name,
       },
