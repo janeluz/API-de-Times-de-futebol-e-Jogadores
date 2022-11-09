@@ -1,7 +1,6 @@
 import { Router } from 'express';
-import { CreatePlayerController } from '../Jogadores/useCases/CreatePlayer/CreatePlayerController';
-
-import { ListByIdController } from '../Jogadores/useCases/ListById/ListByIdController';
+import { CreatePlayerController } from '../Player/useCases/CreatePlayer/CreatePlayerController';
+import { ListByIdController } from '../Player/useCases/ListById/ListByIdController';
 
 const playersRoutes = Router();
 

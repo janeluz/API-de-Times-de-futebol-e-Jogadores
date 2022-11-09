@@ -1,9 +1,8 @@
 import { container } from 'tsyringe';
-import { IPlayerRepository } from '../../modules/Jogadores/repositories/implementations/IPlayerRepository';
-import { PlayerRepository } from '../../modules/Jogadores/repositories/PlayerRepository';
-
-import { TeamRepository } from '../../modules/repositories/implementations/TeamRepository';
-import { ITeamRepository } from '../../modules/repositories/ITeamRepository';
+import { IPlayerRepository } from '../../modules/Player/repositories/implementations/IPlayerRepository';
+import { PlayerRepository } from '../../modules/Player/repositories/PlayerRepository';
+import { TeamRepository } from '../../modules/team/repositories/implementations/TeamRepository';
+import { ITeamRepository } from '../../modules/team/repositories/ITeamRepository';
 
 container.registerSingleton<ITeamRepository>('TeamRepository', TeamRepository);
 

@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
-import { Player } from '../Jogadores/entities/player';
+import { Player } from '../../Player/entities/player';
 
 @Entity('teams')
 class Team {

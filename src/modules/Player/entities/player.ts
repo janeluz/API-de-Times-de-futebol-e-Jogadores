@@ -7,7 +7,8 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
-import { Team } from '../../entities/team';
+import { Team } from '../../team/entities/team';
+
 @Entity('players')
 class Player {
   @PrimaryGeneratedColumn('uuid')

@@ -1,6 +1,7 @@
 import { Repository } from 'typeorm';
-import { AppDataSource } from '../../../data-source';
-import { ICreateTeamDTO } from '../../../dtos/ICreateTeamDTO';
+import { AppDataSource } from '../../../../data-source';
+import { ICreateTeamDTO } from '../../../../dtos/ICreateTeamDTO';
+
 import { Team } from '../../entities/team';
 import { ITeamRepository } from '../ITeamRepository';
 
